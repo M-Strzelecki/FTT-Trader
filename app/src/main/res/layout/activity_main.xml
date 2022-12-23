@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#32d3f2">
+    android:background="#374151">
 
     <Button
         android:id="@+id/btnBackHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home"
+        android:backgroundTint="@color/orangeftt"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -20,10 +22,12 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnGoLogin"
         android:layout_width="150dp"
         android:layout_height="45dp"
+        android:backgroundTint="@color/orangeftt"
         android:text="Login"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.176"
@@ -32,9 +36,11 @@
         app:layout_constraintVertical_bias="0.881" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnGoRegister"
         android:layout_width="150dp"
         android:layout_height="45dp"
+        android:backgroundTint="@color/orangeftt"
+        android:fontFamily="@font/poppins_bold"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,16 +49,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.881" />
 
+    <ImageView
+        android:id="@+id/logo"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
     <FrameLayout
         android:id="@+id/frameLoginRegister"
         android:layout_width="match_parent"
-        android:layout_height="603dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+
+
     </FrameLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Welcome to FTT Crypto and Stock Trader"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
 </androidx.constraintlayout.widget.ConstraintLayout>

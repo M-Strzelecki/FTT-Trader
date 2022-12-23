@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        btnLogin = findViewById(R.id.btnGoLogin);
+        btnRegister = findViewById(R.id.btnGoRegister);
         btnBack = findViewById(R.id.btnBackHome);
 
         //FRAGMENT
@@ -32,24 +32,24 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLoginRegister, new registerfrag())
-                        .commit();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.frameLoginRegister, new registerfrag())
+//                        .commit();
 
-//                Intent goToRegister = new Intent(MainActivity.this,register.class);
-//                startActivity(goToRegister);
+                Intent goToRegister = new Intent(MainActivity.this,register.class);
+                startActivity(goToRegister);
             }
         });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLoginRegister, new loginfrag())
-                        .commit();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.frameLoginRegister, new loginfrag())
+//                        .commit();
 
-//                Intent goToLogin = new Intent(MainActivity.this, login.class);
-//                startActivity(goToLogin);
+                Intent goToLogin = new Intent(MainActivity.this, login.class);
+                startActivity(goToLogin);
             }
         });
 

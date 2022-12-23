@@ -15,14 +15,19 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class home extends AppCompatActivity {
+    FirebaseAuth mAuth;
+
     Button pop_menu;
     TabLayout menubar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mAuth = FirebaseAuth.getInstance();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -76,11 +81,14 @@ public class home extends AppCompatActivity {
 
 
     public boolean onMenuItemClick(MenuItem item){
-        Toast.makeText(this, "You Selected: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "You Selected: " + item.getTitle(), Toast.LENGTH_SHORT).show();
         switch (item.getItemId()){
             case R.id.option1:
+                mAuth.signOut();
                 Intent logout = new Intent(home.this, MainActivity.class);
                 startActivity(logout);
+                finish();
+                Toast.makeText(home.this, "Logout Successful", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.option2:
                 Intent go_to_user_profile = new Intent(home.this, user_profile.class);

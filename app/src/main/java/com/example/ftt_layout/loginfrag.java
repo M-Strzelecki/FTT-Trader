@@ -1,14 +1,24 @@
 package com.example.ftt_layout;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +26,13 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class loginfrag extends Fragment {
+
+//    EditText inputEmail,inputPassword;
+//    Button btnLogin;
+//    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
+//    ProgressDialog progressDialog;
+//    FirebaseAuth mAuth;
+//    FirebaseUser mUser;
 
     public Button btnSignIn;
     // TODO: Rename parameter arguments, choose names that match
@@ -50,9 +67,18 @@ public class loginfrag extends Fragment {
 
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        inputEmail=getView().findViewById(R.id.edLoginEmail);
+//        inputPassword=getView().findViewById(R.id.edLoginPassword);
+//        btnLogin=getView().findViewById(R.id.btnSignIn);
+//        progressDialog = new ProgressDialog(getView().getContext());
+//        mAuth=FirebaseAuth.getInstance();
+//        mUser=mAuth.getCurrentUser();
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -60,7 +86,50 @@ public class loginfrag extends Fragment {
 
         }
 
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                perfromLogin();
+//            }
+//        });
+
     }
+
+//    private void perfromLogin() {
+//        String email=inputEmail.getText().toString();
+//        String password=inputPassword.getText().toString();
+//
+//        if (email.matches(emailPattern)){
+//            inputEmail.setError("Enter correct email");
+//        }else if(password.isEmpty() || password.length()<6){
+//            inputPassword.setError("Enter proper password");
+//        }else {
+//            progressDialog.setMessage("Please Wait Logging In...");
+//            progressDialog.setTitle("Login");
+//            progressDialog.setCanceledOnTouchOutside(false);
+//            progressDialog.show();
+//
+//            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<AuthResult> task) {
+//                    if (task.isSuccessful()){
+//                        progressDialog.dismiss();
+//                        sendUserToNextActivity();
+//                        Toast.makeText(getView().getContext(),"Login Successfully",Toast.LENGTH_SHORT).show();
+//                    }else {
+//                        progressDialog.dismiss();
+//                        Toast.makeText(getView().getContext(),""+task.getException(),Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            });
+//
+//        }
+//    }
+//    private void sendUserToNextActivity() {
+//        Intent intent=new Intent(getView().getContext(),home.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(intent);
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
